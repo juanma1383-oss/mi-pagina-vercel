@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overclock-JCP | Servicio Técnico e Insumos Informáticos</title>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;
+            --accent: #22c55e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+        }
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop') center/cover;
+            padding: 10rem 1rem 6rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        header h1 span {
+            color: var(--primary);
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 2rem auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--bg-dark);
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 4rem 1.5rem;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--text-main);
+        }
+        section h2 span {
+            color: var(--primary);
+        }
+
+        /* Grid de Tarjetas con Imágenes */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #334155;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #334155;
+        }
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .card-content h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        /* Sección de Contacto WhatsApp */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid #334155;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+        }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            transition: opacity 0.2s;
+        }
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #090d16;
+            color: var(--text-muted);
+            border-top: 1px solid #334155;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">⚡ Overclock-JCP</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#insumos">Insumos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Inicio / Header con Imagen de Fondo -->
+    <header id="inicio">
+        <h1>Servicio Técnico <span>Overclock-JCP</span></h1>
+        <p>Soluciones profesionales en reparación de PCs, notebooks, tablets, celulares y venta de insumos informáticos en José C. Paz.</p>
+        <a href="#contacto" class="btn">Pedir Presupuesto</a>
+    </header>
+
+    <!-- Sección de Servicios de Reparación -->
+    <div class="container" id="servicios">
+        <h2>Nuestros <span>Servicios Técnicos</span></h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=600&auto=format&fit=crop" alt="PCs y Notebooks" class="card-img">
+                <div class="card-content">
+                    <h3>PCs y Notebooks</h3>
+                    <p>Formateo, optimización con discos SSD, cambios de pantalla, reparación de bisagras, limpieza profunda y cambio de pasta térmica.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=600&auto=format&fit=crop" alt="Celulares y Tablets" class="card-img">
+                <div class="card-content">
+                    <h3>Celulares y Tablets</h3>
+                    <p>Cambio de módulos display originales, reparación de pines de carga, cambio de baterías y solución a fallas de software o bloqueos.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop" alt="Electrónica y Consolas" class="card-img">
+                <div class="card-content">
+                    <h3>Electrónica y Consolas</h3>
+                    <p>Diagnóstico avanzado en placa, reparación de fuentes de alimentación, mantenimiento preventivo y optimización integral.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Venta de Insumos -->
+    <div class="container" id="insumos" style="padding-top: 0;">
+        <h2>Venta de <span>Insumos Informáticos</span></h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=600&auto=format&fit=crop" alt="Componentes de PC" class="card-img">
+                <div class="card-content">
+                    <h3>Componentes PC</h3>
+                    <p>Procesadores, memorias RAM, placas de video, discos de almacenamiento sólido NVMe y fuentes de alimentación certificados.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop" alt="Periféricos y Gaming" class="card-img">
+                <div class="card-content">
+                    <h3>Periféricos & Gaming</h3>
+                    <p>Teclados mecánicos, mouse de alta precisión, auriculares gamer, alfombrillas y micrófonos para streaming o trabajo.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?q=80&w=600&auto=format&fit=crop" alt="Accesorios y Cables" class="card-img">
+                <div class="card-content">
+                    <h3>Accesorios y Cables</h3>
+                    <p>Cargadores originales y alternativos para notebooks, cables HDMI, adaptadores, hubs USB y elementos de conectividad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div class="container" id="contacto">
+        <div class="contact-box">
+            <h2>¿Necesitas reparar tu equipo o cotizar un insumo?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Escríbenos directamente por WhatsApp y te responderemos a la brevedad con presupuesto estimado.</p>
+            <!-- REEMPLAZA 549XXXXXXXXXX con tu número real de Argentina (ej: 5491112345678) -->
+            <a href="https://wa.me/5491135695978?text=Hola,%20necesito%20consultar%20por%20un%20servicio%20técnico%20en%20Overclock-JCP" class="btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Hablar por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Overclock-JCP - José C. Paz, Buenos Aires. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
