@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overclock-JCP | Servicio Técnico e Insumos Informáticos</title>
@@ -180,15 +179,6 @@
             opacity: 0.9;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #090d16;
-            color: var(--text-muted);
-            border-top: 1px solid #334155;
-        }
-
         /* Responsivo para móviles */
         @media (max-width: 768px) {
             nav ul { display: none; }
@@ -198,24 +188,24 @@
 </head>
 <body>
 
-    <!-- Menú de Navegación con tu Logo Transparente -->
-<nav>
-    <div class="logo">
-        <img src="over.png" alt="Overclock-JCP Informática y Tecnología" style="height: 70px; vertical-align: middle;">
-    </div>
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#insumos">Insumos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-</nav>
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">
+            <img src="over.png" alt="Overclock-JCP Informática y Tecnología" style="height: 40px; vertical-align: middle;"> Overclock-JCP
+        </div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#insumos">Insumos</a></li>
+            <li><a href="#contacto-seccion">Contacto</a></li>
+        </ul>
+    </nav>
 
     <!-- Inicio / Header con Imagen de Fondo -->
     <header id="inicio">
         <h1>Servicio Técnico <span>Overclock-JCP</span></h1>
         <p>Soluciones profesionales en reparación de PCs, notebooks, tablets, celulares y venta de insumos informáticos en José C. Paz.</p>
-        <a href="#contacto" class="btn">Pedir Presupuesto</a>
+        <a href="#contacto-seccion" class="btn">Pedir Presupuesto</a>
     </header>
 
     <!-- Sección de Servicios de Reparación -->
@@ -274,63 +264,62 @@
         </div>
     </div>
 
-    <!-- Sección de Contacto -->
-    <div class="container" id="contacto">
+    <!-- Sección de Contacto WhatsApp -->
+    <div class="container" id="contacto-seccion">
         <div class="contact-box">
             <h2>¿Necesitas reparar tu equipo o cotizar un insumo?</h2>
             <p style="color: var(--text-muted); margin-bottom: 1rem;">Escríbenos directamente por WhatsApp y te responderemos a la brevedad con presupuesto estimado.</p>
-            <!-- REEMPLAZA 549XXXXXXXXXX con tu número real de Argentina (ej: 5491112345678) -->
             <a href="https://wa.me/5491135695978?text=Hola,%20necesito%20consultar%20por%20un%20servicio%20técnico%20en%20Overclock-JCP" class="btn-whatsapp" target="_blank">
                 <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Hablar por WhatsApp
             </a>
         </div>
     </div>
     
-   <!-- FOOTER / CONTACTO -->
-<footer id="contacto" style="background-color: #121212; color: #ffffff; padding: 30px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
-        
-        <!-- Columna 1: Mapa (Más chico y ahora a la izquierda) -->
-        <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.9834705283974!2d-58.76683562353392!3d-34.528646753538716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc978a46bfde69%3A0xd1f85c22ac079fc!2sHUC%2C%20Plat%C3%B3n%205623%2C%20B1665%20Jos%C3%A9%20C.%20Paz%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1787623593283!5m2!1ses!2sar" width="600" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-                width="100%" 
-                height="160" 
-                style="border:0; display:block;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-
-        <!-- Columna 2: Datos de Contacto y Redes (Ahora a la derecha) -->
-        <div>
-            <h3 style="color: #00ffcc; margin-bottom: 10px; font-size: 1.2rem;">Overclock JCP</h3>
-            <p style="margin: 6px 0; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: #00ffcc; margin-right: 8px;"></i> Platón 5623, José C. Paz, Argentina</p>
-            <p style="margin: 6px 0; font-size: 0.9rem;">
-                <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i> 
-                <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; text-decoration: none;">+54 9 11 3569-5978</a>
-            </p>
-            <p style="margin: 6px 0; font-size: 0.9rem;">
-                <i class="fas fa-envelope" style="color: #00ffcc; margin-right: 8px;"></i> 
-                <a href="mailto:tu-correo@email.com" style="color: #ffffff; text-decoration: none;">tu-correo@email.com</a>
-            </p>
+    <!-- FOOTER / CONTACTO -->
+    <footer style="background-color: #121212; color: #ffffff; padding: 30px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
             
-            <!-- Redes Sociales -->
-            <div style="margin-top: 15px; display: flex; gap: 15px;">
-                <a href="https://instagram.com/tu-usuario" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com/overjcp" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <!-- Columna 1: Mapa -->
+            <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.9834705283974!2d-58.76683562353392!3d-34.528646753538716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc978a46bfde69%3A0xd1f85c22ac079fc!2sHUC%2C%20Plat%C3%B3n%205623%2C%20B1665%20Jos%C3%A9%20C.%20Paz%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1787623593283!5m2!1ses!2sar" 
+                    width="100%" 
+                    height="160" 
+                    style="border:0; display:block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-        </div>
 
-    </div>
-    
-    <!-- Derechos de autor abajo del todo -->
-    <div style="text-align: center; margin-top: 25px; border-top: 1px solid #333; padding-top: 12px; font-size: 0.8rem; color: #aaa;">
-        &copy; 2026 Overclock JCP. Todos los derechos reservados.
-    </div>
-</footer>
-    
+            <!-- Columna 2: Datos de Contacto y Redes -->
+            <div>
+                <h3 style="color: #00ffcc; margin-bottom: 10px; font-size: 1.2rem;">Overclock JCP</h3>
+                <p style="margin: 6px 0; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: #00ffcc; margin-right: 8px;"></i> Platón 5623, José C. Paz, Argentina</p>
+                <p style="margin: 6px 0; font-size: 0.9rem;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i> 
+                    <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; text-decoration: none;">+54 9 11 3569-5978</a>
+                </p>
+                <p style="margin: 6px 0; font-size: 0.9rem;">
+                    <i class="fas fa-envelope" style="color: #00ffcc; margin-right: 8px;"></i> 
+                    <a href="mailto:tu-correo@email.com" style="color: #ffffff; text-decoration: none;">tu-correo@email.com</a>
+                </p>
+                
+                <!-- Redes Sociales -->
+                <div style="margin-top: 15px; display: flex; gap: 15px;">
+                    <a href="https://instagram.com/tu-usuario" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/overjcp" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Derechos de autor abajo del todo -->
+        <div style="text-align: center; margin-top: 25px; border-top: 1px solid #333; padding-top: 12px; font-size: 0.8rem; color: #aaa;">
+            &copy; 2026 Overclock JCP. Todos los derechos reservados.
+        </div>
+    </footer>
+
 </body>
 </html>
