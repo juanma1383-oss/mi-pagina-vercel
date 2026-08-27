@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insumos y Accesorios - Overclock-JCP</title>
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;
+            --accent: #22c55e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+        }
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+        }
+
+        /* Contenedor Principal del Catálogo */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 8rem 1.5rem 4rem 1.5rem;
+        }
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .catalog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .catalog-header h1 span {
+            color: var(--primary);
+        }
+        .catalog-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Grid de Productos */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #334155;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #334155;
+        }
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #ff6600;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            flex-grow: 1;
+            margin-bottom: 1.25rem;
+        }
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #334155;
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .btn-consultar {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+        .btn-consultar:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .catalog-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="over.png" alt="Overclock-JCP Informática y Tecnología" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="insumos.html" class="active">Insumos</a></li>
+            <li><a href="index.html#contacto-seccion">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido del Catálogo -->
+    <div class="container">
+        <div class="catalog-header">
+            <h1>Catálogo de <span>Insumos y Accesorios</span></h1>
+            <p>Componentes, periféricos y accesorios disponibles en nuestro taller en José C. Paz.</p>
+        </div>
+
+        <div class="grid">
+            
+            <!-- Producto 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=600&auto=format&fit=crop" alt="Disco SSD Sata" class="card-img">
+                <div class="card-content">
+                    <span class="product-tag">Almacenamiento</span>
+                    <h3>Disco SSD Sata 480GB</h3>
+                    <p>Ideal para revivir notebooks y PCs de escritorio lentas. Mejora notablemente la velocidad del sistema.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Consultar</span>
+                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Disco%20SSD%20Sata%20480GB" class="btn-consultar" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?q=80&w=600&auto=format&fit=crop" alt="Cargador Notebook" class="card-img">
+                <div class="card-content">
+                    <span class="product-tag">Cargadores</span>
+                    <h3>Cargador Universal Notebook</h3>
+                    <p>Compatible con múltiples marcas (HP, Lenovo, Dell, Asus). Incluye variedad de fichas intercambiables de seguridad.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Consultar</span>
+                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Cargador%20Universal%20Notebook" class="btn-consultar" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop" alt="Teclado y Mouse" class="card-img">
+                <div class="card-content">
+                    <span class="product-tag">Periféricos</span>
+                    <h3>Kit Teclado y Mouse Inalámbrico</h3>
+                    <p>Diseño ergonómico y silencioso, conexión USB estable de 2.4GHz. Excelente duración de batería.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Consultar</span>
+                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Kit%20Teclado%20y%20Mouse" class="btn-consultar" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=600&auto=format&fit=crop" alt="Cable HDMI" class="card-img">
+                <div class="card-content">
+                    <span class="product-tag">Conectividad</span>
+                    <h3>Cable HDMI 2.0 4K (1.5m)</h3>
+                    <p>Alta velocidad, conectores mallados reforzados, ideal para consolas de videojuegos y monitores modernos.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Consultar</span>
+                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Cable%20HDMI%202.0" class="btn-consultar" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- FOOTER / CONTACTO -->
+    <footer style="background-color: #121212; color: #ffffff; padding: 30px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
+            
+            <!-- Columna 1: Mapa -->
+            <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.9834705283974!2d-58.76683562353392!3d-34.528646753538716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc978a46bfde69%3A0xd1f85c22ac079fc!2sHUC%2C%20Plat%C3%B3n%205623%2C%20B1665%20Jos%C3%A9%20C.%20Paz%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1787623593283!5m2!1ses!2sar" 
+                    width="100%" 
+                    height="160" 
+                    style="border:0; display:block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Columna 2: Datos de Contacto y Redes -->
+            <div>
+                <h3 style="color: #00ffcc; margin-bottom: 10px; font-size: 1.2rem;">Overclock JCP</h3>
+                <p style="margin: 6px 0; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: #00ffcc; margin-right: 8px;"></i> Platón 5623, José C. Paz, Argentina</p>
+                <p style="margin: 6px 0; font-size: 0.9rem;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 8px;"></i> 
+                    <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; text-decoration: none;">+54 9 11 3569-5978</a>
+                </p>
+                <p style="margin: 6px 0; font-size: 0.9rem;">
+                    <i class="fas fa-envelope" style="color: #00ffcc; margin-right: 8px;"></i> 
+                    <a href="mailto:ventas@overclockjcp.com.ar" style="color: #ffffff; text-decoration: none;">ventas@overclockjcp.com.ar</a>
+                </p>
+                
+                <!-- Redes Sociales -->
+                <div style="margin-top: 15px; display: flex; gap: 15px;">
+                    <a href="https://instagram.com/tu-usuario" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/overjcp" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; font-size: 1.2rem;" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Derechos de autor abajo del todo -->
+        <div style="text-align: center; margin-top: 25px; border-top: 1px solid #333; padding-top: 12px; font-size: 0.8rem; color: #aaa;">
+            &copy; 2026 Overclock JCP. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
