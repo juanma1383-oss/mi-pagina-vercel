@@ -38,28 +38,50 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             z-index: 1000;
             border-bottom: 1px solid #334155;
         }
-        nav .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--primary);
+        nav .logo img {
+            height: 40px; /* Un poquito más compacto para celulares */
+            vertical-align: middle;
         }
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
         nav ul li a {
             color: var(--text-muted);
             text-decoration: none;
             transition: color 0.2s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            white-space: nowrap; /* Evita que el texto se baje de renglón */
         }
         nav ul li a:hover, nav ul li a.active {
             color: var(--primary);
+        }
+
+        /* Responsivo para móviles: Convertimos el menú en una barrita deslizable prolija */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.6rem 1rem;
+                flex-direction: column; /* Pone el logo arriba y el menú abajo en pantallas chicas */
+                gap: 8px;
+            }
+            nav ul {
+                display: flex;
+                width: 100%;
+                overflow-x: auto; /* Permite deslizar con el dedo si no entra todo */
+                justify-content: flex-start;
+                gap: 1rem;
+                padding-bottom: 4px;
+                scrollbar-width: none; /* Oculta la barra fea en algunos navegadores */
+            }
+            nav ul::-webkit-scrollbar {
+                display: none; /* Oculta la barra de desplazamiento en Chrome/Safari */
+            }
+            .catalog-header h1 { font-size: 1.8rem; }
         }
 
         /* Contenedor Principal del Catálogo */
