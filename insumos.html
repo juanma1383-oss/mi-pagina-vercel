@@ -197,72 +197,9 @@
             <p>Componentes, periféricos y accesorios disponibles en nuestro taller en José C. Paz.</p>
         </div>
 
-        <div class="grid">
-            
-            <!-- Producto 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=600&auto=format&fit=crop" alt="Disco SSD Sata" class="card-img">
-                <div class="card-content">
-                    <span class="product-tag">Almacenamiento</span>
-                    <h3>Disco SSD Sata 480GB</h3>
-                    <p>Ideal para revivir notebooks y PCs de escritorio lentas. Mejora notablemente la velocidad del sistema.</p>
-                    <div class="card-footer">
-                        <span class="product-price">Consultar</span>
-                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Disco%20SSD%20Sata%20480GB" class="btn-consultar" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?q=80&w=600&auto=format&fit=crop" alt="Cargador Notebook" class="card-img">
-                <div class="card-content">
-                    <span class="product-tag">Cargadores</span>
-                    <h3>Cargador Universal Notebook</h3>
-                    <p>Compatible con múltiples marcas (HP, Lenovo, Dell, Asus). Incluye variedad de fichas intercambiables de seguridad.</p>
-                    <div class="card-footer">
-                        <span class="product-price">Consultar</span>
-                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Cargador%20Universal%20Notebook" class="btn-consultar" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop" alt="Teclado y Mouse" class="card-img">
-                <div class="card-content">
-                    <span class="product-tag">Periféricos</span>
-                    <h3>Kit Teclado y Mouse Inalámbrico</h3>
-                    <p>Diseño ergonómico y silencioso, conexión USB estable de 2.4GHz. Excelente duración de batería.</p>
-                    <div class="card-footer">
-                        <span class="product-price">Consultar</span>
-                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Kit%20Teclado%20y%20Mouse" class="btn-consultar" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=600&auto=format&fit=crop" alt="Cable HDMI" class="card-img">
-                <div class="card-content">
-                    <span class="product-tag">Conectividad</span>
-                    <h3>Cable HDMI 2.0 4K (1.5m)</h3>
-                    <p>Alta velocidad, conectores mallados reforzados, ideal para consolas de videojuegos y monitores modernos.</p>
-                    <div class="card-footer">
-                        <span class="product-price">Consultar</span>
-                        <a href="https://wa.me/5491135695978?text=Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Cable%20HDMI%202.0" class="btn-consultar" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+        <!-- Aquí se cargarán los productos automáticamente desde JavaScript -->
+        <div class="grid" id="productos-grid">
+            <!-- Los productos se inyectan dinámicamente -->
         </div>
     </div>
     
@@ -311,6 +248,47 @@
             &copy; 2026 Overclock JCP. Todos los derechos reservados.
         </div>
     </footer>
+
+    <!-- SCRIPT PARA CARGAR LOS PRODUCTOS DESDE EL JSON -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const gridContainer = document.getElementById("productos-grid");
+
+            // Leemos el archivo productos.json
+            fetch("productos.json")
+                .then(response => response.json())
+                .then(productos => {
+                    gridContainer.innerHTML = ""; // Limpiamos por si hay algo
+
+                    productos.forEach(prod => {
+                        // Creamos la estructura de cada tarjeta
+                        const card = document.createElement("div");
+                        card.className = "card";
+
+                        card.innerHTML = `
+                            <img src="${prod.imagen}" alt="${prod.titulo}" class="card-img">
+                            <div class="card-content">
+                                <span class="product-tag">${prod.categoria}</span>
+                                <h3>${prod.titulo}</h3>
+                                <p>${prod.descripcion}</p>
+                                <div class="card-footer">
+                                    <span class="product-price">Consultar</span>
+                                    <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+
+                        gridContainer.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error al cargar los productos:", error);
+                    gridContainer.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #94a3b8;'>No se pudieron cargar los productos en este momento.</p>";
+                });
+        });
+    </script>
 
 </body>
 </html>
