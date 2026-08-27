@@ -108,7 +108,9 @@
         .card-img {
             height: 180px;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Cambiamos cover por contain para que la foto entera se vea sin recortar */
+            background-color: #ffffff; /* Fondo blanco prolijo para las fotos de productos */
+            padding: 10px; /* Un pequeño respiro para que la caja no quede pegada */
             border-bottom: 1px solid #334155;
         }
         .card-content {
