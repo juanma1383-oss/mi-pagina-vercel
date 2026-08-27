@@ -201,6 +201,16 @@
             <p>Componentes, periféricos y accesorios disponibles en nuestro taller en José C. Paz.</p>
         </div>
 
+    <!-- NUEVOS BOTONES DE FILTRO -->
+            <div class="filter-buttons" style="display: flex; justify-content: center; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap;">
+                <button class="filter-btn active" onclick="filtrarProductos('todos')" style="background: var(--primary); border: none; color: var(--bg-dark); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Todos</button>
+                <button class="filter-btn" onclick="filtrarProductos('Almacenamiento')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Almacenamiento</button>
+                <button class="filter-btn" onclick="filtrarProductos('Cargadores')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Cargadores</button>
+                <button class="filter-btn" onclick="filtrarProductos('Periféricos')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Periféricos</button>
+                <button class="filter-btn" onclick="filtrarProductos('Conectividad')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Conectividad</button>
+            </div>
+        </div>
+        
         <!-- Aquí se cargarán los productos automáticamente desde JavaScript -->
         <div class="grid" id="productos-grid">
             <!-- Los productos se inyectan dinámicamente -->
@@ -255,6 +265,8 @@
 
     <!-- SCRIPT PARA CARGAR LOS PRODUCTOS DESDE EL JSON -->
     <script>
+        let todosLosProductos = []; // Guardamos los productos acá globalmente
+
         document.addEventListener("DOMContentLoaded", () => {
             const gridContainer = document.getElementById("productos-grid");
 
@@ -262,36 +274,68 @@
             fetch("productos.json")
                 .then(response => response.json())
                 .then(productos => {
-                    gridContainer.innerHTML = ""; // Limpiamos por si hay algo
-
-                    productos.forEach(prod => {
-                        // Creamos la estructura de cada tarjeta
-                        const card = document.createElement("div");
-                        card.className = "card";
-
-                        card.innerHTML = `
-                            <img src="${prod.imagen}" alt="${prod.titulo}" class="card-img">
-                            <div class="card-content">
-                                <span class="product-tag">${prod.categoria}</span>
-                                <h3>${prod.titulo}</h3>
-                                <p>${prod.descripcion}</p>
-                                <div class="card-footer">
-                                    
-                                    <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank">
-                                        <i class="fab fa-whatsapp"></i> Consultar
-                                    </a>
-                                </div>
-                            </div>
-                        `;
-
-                        gridContainer.appendChild(card);
-                    });
+                    todosLosProductos = productos; // Los guardamos en la variable
+                    mostrarProductos(todosLosProductos); // Los mostramos todos al entrar
                 })
                 .catch(error => {
                     console.error("Error al cargar los productos:", error);
                     gridContainer.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #94a3b8;'>No se pudieron cargar los productos en este momento.</p>";
                 });
         });
+
+        // Función para dibujar las tarjetas en la pantalla
+        function mostrarProductos(arrayProductos) {
+            const gridContainer = document.getElementById("productos-grid");
+            gridContainer.innerHTML = ""; // Limpiamos el contenedor
+
+            if (arrayProductos.length === 0) {
+                gridContainer.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #94a3b8;'>No hay productos en esta categoría por el momento.</p>";
+                return;
+            }
+
+            arrayProductos.forEach(prod => {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                card.innerHTML = `
+                    <img src="${prod.imagen}" alt="${prod.titulo}" class="card-img">
+                    <div class="card-content">
+                        <span class="product-tag">${prod.categoria}</span>
+                        <h3>${prod.titulo}</h3>
+                        <p>${prod.descripcion}</p>
+                        <div class="card-footer">
+                            <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consultar stock
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Función que filtra los productos al hacer clic en los botones
+        function filtrarProductos(categoriaSeleccionada) {
+            // Actualizamos los estilos visuales de los botones activos
+            const botones = document.querySelectorAll('.filter-btn');
+            botones.forEach(btn => {
+                btn.style.background = "var(--bg-card)";
+                btn.style.color = "var(--text-main)";
+                btn.style.borderColor = "#334155";
+            });
+
+            // Pintamos el botón presionado
+            event.target.style.background = "var(--primary)";
+            event.target.style.color = "var(--bg-dark)";
+
+            if (categoriaSeleccionada === 'todos') {
+                mostrarProductos(todosLosProductos);
+            } else {
+                const filtrados = todosLosProductos.filter(prod => prod.categoria === categoriaSeleccionada);
+                mostrarProductos(filtrados);
+            }
+        }
     </script>
 
 </body>
