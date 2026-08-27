@@ -276,77 +276,97 @@
         </div>
     </div>
 
-    <!-- Seccion de Reseñas de Google -->
-<section class="py-12 bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-6xl mx-auto px-4">
+    <!-- Sección de Reseñas de Google - Versión Mejorada Visualmente -->
+<section class="py-16 bg-gray-50 dark:bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Título de la sección -->
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Lo que dicen nuestros clientes</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">Opiniones reales extraídas de nuestro perfil de Google Maps</p>
+        <!-- Título y Encabezado -->
+        <div class="text-center mb-12 flex flex-col items-center">
+            <!-- Logo de Google pequeño arriba -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" class="w-10 h-10 mb-4 opacity-90">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">Lo que dicen nuestros clientes</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mt-3 max-w-2xl">Nos enorgullece brindar un servicio transparente y de calidad. Estas son opiniones reales de nuestros clientes en Google Maps.</p>
         </div>
 
         <!-- Grilla de Reseñas (3 tarjetas) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <!-- Reseña 1 -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 flex flex-col justify-between">
-                <div>
-                    <!-- Estrellas -->
-                    <div class="flex text-yellow-400 mb-3">
-                        ★★★★★
+            <!-- Tarjeta 1 (Ejemplo) -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <!-- Encabezado de la tarjeta (Foto + Nombre + Estrellas) -->
+                <div class="flex items-center gap-4 mb-6">
+                    <!-- FOTO DEL CLIENTE (Reemplazar URL por la tuya o una genérica) -->
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Martín Gómez" class="w-16 h-16 rounded-full border-4 border-white dark:border-gray-700 shadow">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Martín Gómez</h4>
+                        <!-- Estrellas -->
+                        <div class="flex text-yellow-400 text-lg mt-1 space-x-0.5">
+                            ★★★★★
+                        </div>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm italic">
-                        "Excelente atención y rapidez. Me arreglaron la pantalla de la notebook en el día y a un precio súper razonable. Súper recomendados."
-                    </p>
+                    <!-- Pequeña insignia de Google -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google G" class="w-5 h-5 ml-auto opacity-50">
                 </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
-                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Martín Gómez</span>
-                    <span class="text-xs text-gray-400">Hace 2 semanas</span>
+                
+                <!-- Cuerpo de la reseña -->
+                <blockquote class="flex-grow text-gray-700 dark:text-gray-300 text-base leading-relaxed italic">
+                    "Excelente atención y rapidez. Me arreglaron la pantalla de la notebook en el día y a un precio súper razonable. Súper recomendados si tienen problemas técnicos."
+                </blockquote>
+
+                <!-- Pie de tarjeta (Fecha) -->
+                <div class="mt-6 pt-5 border-t border-gray-100 dark:border-gray-800 text-sm text-gray-400">
+                    Hace 2 semanas
                 </div>
             </div>
 
-            <!-- Reseña 2 -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 flex flex-col justify-between">
-                <div>
-                    <!-- Estrellas -->
-                    <div class="flex text-yellow-400 mb-3">
-                        ★★★★★
+            <!-- Tarjeta 2 (Ejemplo) -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de Lucía Fernández" class="w-16 h-16 rounded-full border-4 border-white dark:border-gray-700 shadow">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Lucía Fernández</h4>
+                        <div class="flex text-yellow-400 text-lg mt-1 space-x-0.5">
+                            ★★★★★
+                        </div>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm italic">
-                        "Muy profesionales. Llevé mi celular que no encendía por un problema de placa y lo revivieron. Muy honestos con el presupuesto."
-                    </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google G" class="w-5 h-5 ml-auto opacity-50">
                 </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
-                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Lucía Fernández</span>
-                    <span class="text-xs text-gray-400">Hace 1 mes</span>
+                <blockquote class="flex-grow text-gray-700 dark:text-gray-300 text-base leading-relaxed italic">
+                    "Muy profesionales. Llevé mi celular que no encendía por un problema de placa y lo revivieron. Me explicaron todo el proceso claramente. Da gusto encontrar gente así."
+                </blockquote>
+                <div class="mt-6 pt-5 border-t border-gray-100 dark:border-gray-800 text-sm text-gray-400">
+                    Hace 1 mes
                 </div>
             </div>
 
-            <!-- Reseña 3 -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 flex flex-col justify-between">
-                <div>
-                    <!-- Estrellas -->
-                    <div class="flex text-yellow-400 mb-3">
-                        ★★★★★
+            <!-- Tarjeta 3 (Ejemplo) -->
+            <div class="bg-white dark:bg-900 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Foto de Diego Benítez" class="w-16 h-16 rounded-full border-4 border-white dark:border-gray-700 shadow">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Diego Benítez</h4>
+                        <div class="flex text-yellow-400 text-lg mt-1 space-x-0.5">
+                            ★★★★★
+                        </div>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm italic">
-                        "Excelente servicio técnico para computadoras y consolas. Te explican bien qué tenía el equipo antes de tocarlo. Da gusto encontrar gente así."
-                    </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google G" class="w-5 h-5 ml-auto opacity-50">
                 </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
-                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Diego Benítez</span>
-                    <span class="text-xs text-gray-400">Hace 2 meses</span>
+                <blockquote class="flex-grow text-gray-700 dark:text-gray-300 text-base leading-relaxed italic">
+                    "Excelente servicio técnico para computadoras y consolas. Los precios son justos y la atención es personalizada. Volveré si tengo otro problema."
+                </blockquote>
+                <div class="mt-6 pt-5 border-t border-gray-100 dark:border-gray-800 text-sm text-gray-400">
+                    Hace 2 meses
                 </div>
             </div>
 
         </div>
 
-        <!-- Botón para ver todas en Google Maps -->
-        <div class="text-center mt-10">
-            <a href="A_PEGAR_TU_LINK_DE_GOOGLE_MAPS_AQUI" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow transition duration-200">
-                <!-- Icono de Google / Mapa opcional -->
-                Ver todas las opiniones en Google
+        <!-- Botón Call-to-Action principal -->
+        <div class="text-center mt-16">
+            <a href="A_PEGAR_TU_LINK_DE_GOOGLE_MAPS_AQUI" target="_blank" class="inline-flex items-center gap-3 bg-gray-900 dark:bg-white hover:bg-gray-700 dark:hover:bg-gray-200 text-white dark:text-gray-900 font-semibold px-10 py-4 rounded-full shadow-lg text-lg transform transition active:scale-95">
+                <!-- Icono de Mapa -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                Ver todas las opiniones en Google Maps
             </a>
         </div>
 
