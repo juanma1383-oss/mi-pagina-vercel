@@ -182,8 +182,22 @@
 
         /* Responsivo para móviles */
         @media (max-width: 768px) {
-            nav ul { display: none; }
-            header h1 { font-size: 2.2rem; }
+            nav {
+                padding: 0.6rem 1rem;
+                flex-direction: column;
+                gap: 8px;
+            }
+            nav ul {
+                display: flex !important;
+                width: 100%;
+                overflow-x: auto;
+                justify-content: center;
+                gap: 1.2rem;
+                padding-bottom: 4px;
+            }
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -192,14 +206,15 @@
     <!-- Menú de Navegación -->
     <nav>
         <div class="logo">
-            <img src="over.png" alt="Overclock-JCP Informática y Tecnología" style="height: 70px; vertical-align: middle;">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="over.png" alt="Overclock-JCP Informática y Tecnología" style="height: 40px; vertical-align: middle;">
+            </a>
         </div>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#insumos">Insumos</a></li>
-            <li><a href="#contacto-seccion">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
             <li><a href="insumos.html">Insumos</a></li>
+            <li><a href="index.html#contacto-seccion">Contacto</a></li>
         </ul>
     </nav>
 
