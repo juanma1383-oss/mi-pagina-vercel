@@ -66,20 +66,19 @@
         @media (max-width: 768px) {
             nav {
                 padding: 0.6rem 1rem;
-                flex-direction: column; /* Pone el logo arriba y el menú abajo en pantallas chicas */
+                flex-direction: column; /* Pone el logo arriba y el menú abajo */
                 gap: 8px;
             }
             nav ul {
-                display: flex;
+                display: flex !important; /* Forzamos que se muestre sí o sí */
                 width: 100%;
-                overflow-x: auto; /* Permite deslizar con el dedo si no entra todo */
-                justify-content: flex-start;
-                gap: 1rem;
+                overflow-x: auto; /* Permite deslizar con el dedo */
+                justify-content: center; /* Centra las opciones del menú */
+                gap: 1.2rem;
                 padding-bottom: 4px;
-                scrollbar-width: none; /* Oculta la barra fea en algunos navegadores */
             }
             nav ul::-webkit-scrollbar {
-                display: none; /* Oculta la barra de desplazamiento en Chrome/Safari */
+                display: none;
             }
             .catalog-header h1 { font-size: 1.8rem; }
         }
