@@ -1,411 +1,794 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Insumos y Accesorios - Overclock-JCP</title>
+
     
+
     <!-- Iconos de FontAwesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+
         :root {
+
             --bg-dark: #0f172a;
+
             --bg-card: #1e293b;
+
             --primary: #38bdf8;
+
             --accent: #22c55e;
+
             --text-main: #f8fafc;
+
             --text-muted: #94a3b8;
+
         }
+
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
             scroll-behavior: smooth;
+
         }
+
         body {
+
             background-color: var(--bg-dark);
+
             color: var(--text-main);
+
             line-height: 1.6;
+
         }
+
         /* Navbar */
+
         nav {
+
             position: fixed;
+
             top: 0;
+
             width: 100%;
+
             background: rgba(15, 23, 42, 0.95);
+
             backdrop-filter: blur(5px);
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             padding: 0.8rem 1.5rem;
+
             z-index: 1000;
+
             border-bottom: 1px solid #334155;
+
         }
+
         nav .logo img {
+
             height: 40px; /* Un poquito más compacto para celulares */
+
             vertical-align: middle;
+
         }
+
         nav ul {
+
             display: flex;
+
             list-style: none;
+
             gap: 1.2rem;
+
         }
+
         nav ul li a {
+
             color: var(--text-muted);
+
             text-decoration: none;
+
             transition: color 0.2s;
+
             font-size: 0.9rem;
+
             white-space: nowrap; /* Evita que el texto se baje de renglón */
+
         }
+
         nav ul li a:hover, nav ul li a.active {
+
             color: var(--primary);
+
         }
+
+
 
         /* Responsivo para móviles: Convertimos el menú en una barrita deslizable prolija */
+
         @media (max-width: 768px) {
+
             nav {
+
                 padding: 0.6rem 1rem;
+
                 flex-direction: column; /* Pone el logo arriba y el menú abajo */
+
                 gap: 8px;
+
             }
+
             nav ul {
+
                 display: flex !important; /* Forzamos que se muestre sí o sí */
+
                 width: 100%;
+
                 overflow-x: auto; /* Permite deslizar con el dedo */
+
                 justify-content: center; /* Centra las opciones del menú */
+
                 gap: 1.2rem;
+
                 padding-bottom: 4px;
+
             }
+
             nav ul::-webkit-scrollbar {
+
                 display: none;
+
             }
+
             .catalog-header h1 { font-size: 1.8rem; }
+
         }
+
+
 
         /* Contenedor Principal del Catálogo */
+
         .container {
+
             max-width: 1100px;
+
             margin: auto;
+
             padding: 8rem 1.5rem 4rem 1.5rem;
+
         }
+
         .catalog-header {
+
             text-align: center;
+
             margin-bottom: 3rem;
+
         }
+
         .catalog-header h1 {
+
             font-size: 2.5rem;
+
             margin-bottom: 0.5rem;
+
             color: var(--text-main);
+
         }
+
         .catalog-header h1 span {
+
             color: var(--primary);
+
         }
+
         .catalog-header p {
+
             color: var(--text-muted);
+
             font-size: 1.1rem;
+
         }
+
+
 
         /* Grid de Productos */
+
         .grid {
+
             display: grid;
+
             /* Usamos autofit con un maximo para que las tarjetas no se estiren de más si hay pocos productos */
+
             grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+
             gap: 2rem;
+
             justify-content: center; /* Centra las tarjetas si quedan pocas en la fila */
+
         }
+
         .card {
+
             background: var(--bg-card);
+
             border-radius: 10px;
+
             border: 1px solid #334155;
+
             overflow: hidden;
+
             transition: transform 0.2s, border-color 0.2s;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: space-between;
+
         }
+
         .card:hover {
+
             transform: translateY(-5px);
+
             border-color: var(--primary);
+
         }
+
         .card-img {
+
             height: 180px;
+
             width: 100%;
+
             object-fit: contain; /* Cambiamos cover por contain para que la foto entera se vea sin recortar */
+
             background-color: #ffffff; /* Fondo blanco prolijo para las fotos de productos */
+
             padding: 10px; /* Un pequeño respiro para que la caja no quede pegada */
+
             border-bottom: 1px solid #334155;
+
         }
+
         .card-content {
+
             padding: 1.5rem;
+
             display: flex;
+
             flex-direction: column;
+
             flex-grow: 1;
+
         }
+
         .product-tag {
+
             font-size: 0.75rem;
+
             text-transform: uppercase;
+
             color: #ff6600;
+
             font-weight: 700;
+
             margin-bottom: 0.5rem;
+
             letter-spacing: 0.5px;
+
         }
+
         .card-content h3 {
+
             margin-bottom: 0.5rem;
+
             font-size: 1.2rem;
+
             color: var(--text-main);
+
         }
+
         .card-content p {
+
             color: var(--text-muted);
+
             font-size: 0.9rem;
+
             flex-grow: 1;
+
             margin-bottom: 1.25rem;
+
         }
+
         .card-footer {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             border-top: 1px solid #334155;
+
             padding-top: 1rem;
+
             margin-top: auto;
+
         }
+
         .product-price {
+
             font-size: 1.1rem;
+
             font-weight: bold;
+
             color: var(--primary);
+
         }
+
         .btn-consultar {
+
             background-color: var(--accent);
+
             color: white;
+
             padding: 0.6rem 1rem;
+
             border-radius: 5px;
+
             text-decoration: none;
+
             font-size: 0.9rem;
+
             font-weight: bold;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center; /* Centra el texto y el ícono */
+
             width: 100%; /* <-- ¡Agregá o verificá que esté esta línea para que ocupe todo el ancho! */
+
             gap: 8px;
+
             transition: opacity 0.2s;
+
         }
+
         .btn-consultar:hover {
+
             opacity: 0.9;
+
         }
+
+
 
         /* Responsivo para móviles */
+
         @media (max-width: 768px) {
+
             nav ul { display: none; }
+
             .catalog-header h1 { font-size: 2rem; }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <!-- Menú de Navegación -->
+
     <nav>
+
         <div class="logo">
+
             <a href="index.html" style="text-decoration: none;">
+
                 <img src="over.png" alt="Overclock-JCP Informática y Tecnología" style="height: 70px; vertical-align: middle;">
+
             </a>
+
         </div>
+
         <ul>
+
             <li><a href="index.html">Inicio</a></li>
+
             <li><a href="index.html#servicios">Servicios</a></li>
+
             <li><a href="insumos.html" class="active">Insumos</a></li>
+
             <li><a href="index.html#contacto-seccion">Contacto</a></li>
+
         </ul>
+
     </nav>
 
+
+
     <!-- Contenido del Catálogo -->
+
     <div class="container">
+
         <div class="catalog-header">
+
             <h1>Catálogo de <span>Insumos y Accesorios</span></h1>
+
             <p>Componentes, periféricos y accesorios disponibles en nuestro taller en José C. Paz.</p>
+
         </div>
+
+
 
     <!-- NUEVOS BOTONES DE FILTRO -->
+
             <div class="filter-buttons" style="display: flex; justify-content: center; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap;">
+
                 <button class="filter-btn active" onclick="filtrarProductos('todos')" style="background: var(--primary); border: none; color: var(--bg-dark); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Todos</button>
+
                 <button class="filter-btn" onclick="filtrarProductos('Almacenamiento')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Almacenamiento</button>
+
                 <button class="filter-btn" onclick="filtrarProductos('Cargadores')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Cargadores</button>
+
                 <button class="filter-btn" onclick="filtrarProductos('Periféricos')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Periféricos</button>
+
                 <button class="filter-btn" onclick="filtrarProductos('Conectividad')" style="background: var(--bg-card); border: 1px solid #334155; color: var(--text-main); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.2s;">Conectividad</button>
+
             </div>
+
         </div>
+
         
+
         <!-- Aquí se cargarán los productos automáticamente desde JavaScript -->
+
         <div class="grid" id="productos-grid">
+
             <!-- Los productos se inyectan dinámicamente -->
+
         </div>
+
     </div>
+
     
+
     <!-- FOOTER CON ORDEN: MAPA -> DATOS -> PAGOS -->
+
     <footer style="background-color: #121212; color: #ffffff; padding: 40px 5%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-top: 1px solid #334155;">
+
         <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: start;">
+
             
+
             <!-- Columna 1: Ubicación del Taller (Mapa) -->
+
             <div>
+
                 <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 1.3rem;">Ubicación del Taller</h3>
+
                 <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+
                     <iframe 
+
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.9834705283974!2d-58.76683562353392!3d-34.528646753538716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc978a46bfde69%3A0xd1f85c22ac079fc!2sHUC%2C%20Plat%C3%B3n%205623%2C%20B1665%20Jos%C3%A9%20C.%20Paz%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1787623593283!5m2!1ses!2sar" 
+
                         width="100%" 
+
                         height="200" 
+
                         style="border:0; display:block;" 
+
                         allowfullscreen="" 
+
                         loading="lazy" 
+
                         referrerpolicy="no-referrer-when-downgrade">
+
                     </iframe>
+
                 </div>
+
             </div>
+
+
 
             <!-- Columna 2: Datos de Contacto, Horarios y Redes -->
+
             <div>
+
                 <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 1.3rem;">Overclock JCP</h3>
+
                 <p style="margin: 8px 0; font-size: 0.95rem;"><i class="fas fa-map-marker-alt" style="color: #38bdf8; margin-right: 10px;"></i> Platón 5623, José C. Paz, Argentina</p>
+
                 <p style="margin: 8px 0; font-size: 0.95rem;">
+
                     <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 10px;"></i> 
+
                     <a href="https://wa.me/5491135695978" target="_blank" style="color: #ffffff; text-decoration: none;">+54 9 11 3569-5978</a>
+
                 </p>
+
                 <p style="margin: 8px 0; font-size: 0.95rem;">
+
                     <i class="fas fa-envelope" style="color: #38bdf8; margin-right: 10px;"></i> 
+
                     <a href="mailto:ventas@overclockjcp.com.ar" style="color: #ffffff; text-decoration: none;">ventas@overclockjcp.com.ar</a>
+
                 </p>
+
                 <p style="margin: 8px 0; font-size: 0.95rem;"><i class="fas fa-clock" style="color: #38bdf8; margin-right: 10px;"></i> Lunes a Viernes: 9:00 a 18:00 hs</p>
+
                 <p style="margin: 8px 0; font-size: 0.85rem; color: #94a3b8;">Para ingreso de equipos y retiros: de Lunes a Viernes después de las 18:00 hs</p>
+
                 
+
                 <!-- Redes Sociales -->
+
                 <div style="margin-top: 20px; border-top: 1px solid #1e293b; padding-top: 15px;">
+
                     <p style="margin-bottom: 10px; font-size: 0.9rem; color: #94a3b8; font-weight: 600;">Seguinos en:</p>
+
                     <div style="display: flex; gap: 10px;">
+
                         <a href="https://instagram.com/tu-usuario" target="_blank" style="background: #1e293b; color: #ffffff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;" title="Instagram">
+
                             <i class="fab fa-instagram"></i>
+
                         </a>
+
                         <a href="https://facebook.com/overjcp" target="_blank" style="background: #1e293b; color: #ffffff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;" title="Facebook">
+
                             <i class="fab fa-facebook-f"></i>
+
                         </a>
+
                         <a href="https://wa.me/5491135695978" target="_blank" style="background: #1e293b; color: #ffffff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;" title="WhatsApp">
+
                             <i class="fab fa-whatsapp"></i>
+
                         </a>
+
                     </div>
+
                 </div>
+
             </div>
+
+
 
             <!-- Columna 3: Métodos de Pago -->
+
             <div>
+
                 <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 1.3rem;">Medios de Pago</h3>
+
                 <p style="margin: 8px 0; font-size: 0.95rem; color: #94a3b8;">Aceptamos diferentes formas de pago para tu comodidad en el taller:</p>
+
                 
+
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+
                     <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">
+
                         <i class="fas fa-money-bill-wave" style="color: #22c55e; font-size: 1.2rem; width: 25px;"></i> Efectivo
+
                     </div>
+
                     <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">
+
                         <i class="fas fa-exchange-alt" style="color: #38bdf8; font-size: 1.2rem; width: 25px;"></i> Transferencia Bancaria / CBU
+
                     </div>
+
                     <div style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">
+
                         <i class="fas fa-wallet" style="color: #009ee3; font-size: 1.2rem; width: 25px;"></i> Mercado Pago (QR / Dinero en cuenta)
+
                     </div>
+
                 </div>
+
             </div>
 
+
+
         </div>
+
         
+
         <!-- Copyright abajo del todo -->
+
         <div style="text-align: center; margin-top: 30px; border-top: 1px solid #222; padding-top: 15px; font-size: 0.85rem; color: #94a3b8;">
+
             &copy; 2026 Overclock JCP. Todos los derechos reservados.
+
         </div>
+
     </footer>
 
+
+
     <!-- SCRIPT PARA CARGAR LOS PRODUCTOS DESDE EL JSON -->
+
     <script>
+
         let todosLosProductos = []; // Guardamos los productos acá globalmente
 
+
+
         document.addEventListener("DOMContentLoaded", () => {
+
             const gridContainer = document.getElementById("productos-grid");
+
+
 
             // Leemos el archivo productos.json
+
             fetch("productos.json")
+
                 .then(response => response.json())
+
                 .then(productos => {
+
                     todosLosProductos = productos; // Los guardamos en la variable
+
                     mostrarProductos(todosLosProductos); // Los mostramos todos al entrar
+
                 })
+
                 .catch(error => {
+
                     console.error("Error al cargar los productos:", error);
+
                     gridContainer.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #94a3b8;'>No se pudieron cargar los productos en este momento.</p>";
+
                 });
+
         });
 
+
+
         // Función para dibujar las tarjetas en la pantalla
+
         function mostrarProductos(arrayProductos) {
+
             const gridContainer = document.getElementById("productos-grid");
+
             gridContainer.innerHTML = ""; // Limpiamos el contenedor
 
+
+
             if (arrayProductos.length === 0) {
+
                 gridContainer.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #94a3b8;'>No hay productos en esta categoría por el momento.</p>";
+
                 return;
+
             }
+
+
 
             arrayProductos.forEach(prod => {
+
                 const card = document.createElement("div");
+
                 card.className = "card";
 
+
+
                 card.innerHTML = `
+
                     <img src="${prod.imagen}" alt="${prod.titulo}" class="card-img">
+
                     <div class="card-content">
+
                         <span class="product-tag">${prod.categoria}</span>
+
                         <h3>${prod.titulo}</h3>
+
                         <p>${prod.descripcion}</p>
-                        
-                        <!-- Pie de tarjeta con precio y botón alineados y centrados -->
-                        <div class="card-footer" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
-                            <span class="product-price" style="font-size: 1.25rem; font-weight: bold; color: var(--primary); white-space: nowrap;">$ ${prod.precio}</span>
-                            <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank" style="flex-grow: 1; margin: 0;">
-                                <i class="fab fa-whatsapp"></i> Consultar stock
-                            </a>
-                        </div>
-                    </div>
-                }`;
-                            
-<div class="card-footer">
+
+                        <div class="card-footer">
+
                             <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank">
+
                                 <i class="fab fa-whatsapp"></i> Consultar stock
+
                             </a>
+
                         </div>
+
                     </div>
+
                 `;
 
+
+
                 gridContainer.appendChild(card);
+
             });
+
         }
 
-                        
-                        
+
 
         // Función que filtra los productos al hacer clic en los botones
+
         function filtrarProductos(categoriaSeleccionada) {
+
             // Actualizamos los estilos visuales de los botones activos
+
             const botones = document.querySelectorAll('.filter-btn');
+
             botones.forEach(btn => {
+
                 btn.style.background = "var(--bg-card)";
+
                 btn.style.color = "var(--text-main)";
+
                 btn.style.borderColor = "#334155";
+
             });
 
+
+
             // Pintamos el botón presionado
+
             event.target.style.background = "var(--primary)";
+
             event.target.style.color = "var(--bg-dark)";
 
+
+
             if (categoriaSeleccionada === 'todos') {
+
                 mostrarProductos(todosLosProductos);
+
             } else {
+
                 const filtrados = todosLosProductos.filter(prod => prod.categoria === categoriaSeleccionada);
+
                 mostrarProductos(filtrados);
+
             }
+
         }
+
     </script>
 
+
+
 </body>
-</html>
+
+</html> 
+
