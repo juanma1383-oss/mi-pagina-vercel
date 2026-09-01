@@ -13,6 +13,7 @@
     "categoria": "Cargadores",
     "titulo": "Cargador Universal Notebook",
     "descripcion": "Compatible con múltiples marcas (HP, Lenovo, Dell, Asus). Incluye variedad de fichas intercambiables de seguridad.",
+    "precio": "35.000",
     "imagen": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?q=80&w=600&auto=format&fit=crop",
     "mensajeWpp": "Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Cargador%20Universal%20Notebook"
   },
@@ -21,6 +22,7 @@
     "categoria": "Periféricos",
     "titulo": "Kit Teclado y Mouse Inalámbrico",
     "descripcion": "Diseño ergonómico y silencioso, conexión USB estable de 2.4GHz. Excelente duración de batería.",
+    "precio": "35.000",
     "imagen": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=600&auto=format&fit=crop",
     "mensajeWpp": "Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20Kit%20Teclado%20y%20Mouse"
   },
@@ -29,6 +31,7 @@
     "categoria": "Conectividad",
     "titulo": "PLACA USB WIRELESS TP-LINK WN722N",
     "descripcion": "Velocidad: Hasta 150 Mbps, ideal para navegación, llamadas por internet y streaming de video básico.Antena: Externa, desmontable y omnidireccional de 4dBi (conector RP-SMA), que mejora notablemente el alcance y la estabilidad de la señal.Conectividad: Interfaz USB 2.0.Seguridad: Botón WPS / QSS para una configuración cifrada y segura de manera instantánea (soporta WEP, WPA/WPA2).Compatibilidad: Funciona con sistemas operativos Windows, Mac OS y Linux.",
+    "precio": "19.900",
     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS39N4dup23qydHdU5p-XAt95MKWUcQ7Ixr_CFvuQy6Dw&s",
     "mensajeWpp": "Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%20PLACA%20USB%20WIRELESS%20TP-LINK%20WN722N"
   },
@@ -37,7 +40,8 @@
     "categoria": "Conectividad",
     "titulo": "PLACA USB WIRELESS TP-LINK 8200ND 300N 2ANT.",
     "descripcion": "Hasta 300 Mbps en la banda de 2.4 GHz, ideal para streaming y tareas exigentes.Alta potencia y alcance: Ofrece hasta 10 veces más rango que un adaptador USB estándar gracias a su alta potencia de transmisión.Doble antena: Incluye dos antenas omnidireccionales desmontables de 5 dBi, ajustables y rotantes para mejorar la recepción.Penetración: Diseñado para superar obstáculos físicos como paredes y pisos.Diseño y accesorios: Formato de escritorio e incluye un cable de extensión USB de 1.5 metros.Conectividad y seguridad: Interfaz Mini USB y botón WPS para encriptación rápida.",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTs0baOd7Oc5ycisw3ci1VGmYnrFT88-egniUE9GWfUA&s",
+    "precio": "35.000",
+     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTs0baOd7Oc5ycisw3ci1VGmYnrFT88-egniUE9GWfUA&s",
     "mensajeWpp": "Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20de%20PLACA%20USB%20WIRELESS%20TP-LINK%208200ND%20300N&202ANT."
   },
    {
@@ -45,7 +49,8 @@
     "categoria": "Conectividad",
     "titulo": "PLACA USB WIRELESS MERCUSYS MW300UH 2 ANTENAS 300N",
     "descripcion": "Velocidad: Ofrece transferencia inalámbrica de hasta 300 Mbps en la banda de 2.4 GHz, ideal para navegación, clases virtuales y streaming básico.Doble antena: Incorpora dos antenas externas de alta ganancia de 5 dBi que mejoran la recepción y estabilidad de la señal a distancia.Tecnología MIMO 2x2: Permite un flujo de datos más fluido y veloz al comunicarse con el router.Diseño con cable: Viene con un soporte de escritorio y cable USB conectado, lo que permite ubicar el aparato en un lugar despejado para evitar interferencias.Compatibilidad: Funciona con sistemas operativos Windows (desde XP hasta versiones recientes como 10 y 11) mediante la instalación de controladores",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBwYu7gW3cRzAq6S6eo5UEcReJRzd-vFWEu-kbkvhRRg&s=10",
+    "precio": "35.000",
+     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBwYu7gW3cRzAq6S6eo5UEcReJRzd-vFWEu-kbkvhRRg&s=10",
     "mensajeWpp": "Hola,%20me%20interesa%20consultar%20precio%20y%20stock%20del%PLACA%20USB%20WIRELESS%20MERCUSYS%20MW300UH%202%20ANTENAS%20300N"
   }
 ]
