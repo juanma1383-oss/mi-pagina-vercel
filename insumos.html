@@ -358,6 +358,10 @@
                         <span class="product-tag">${prod.categoria}</span>
                         <h3>${prod.titulo}</h3>
                         <p>${prod.descripcion}</p>
+                        <!-- AGREGAMOS ESTE BLOQUE PARA EL PRECIO -->
+                        <div class="card-footer" style="border-top: none; padding-top: 0; margin-bottom: 0.8rem;">
+                            <span class="product-price">$ ${prod.precio}</span>
+                        </div>
                         <div class="card-footer">
                             <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank">
                                 <i class="fab fa-whatsapp"></i> Consultar stock
