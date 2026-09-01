@@ -746,7 +746,29 @@
 
         }
 
+     // Función de búsqueda en tiempo real
+        function filtrarPorBusqueda() {
+            const textoBuscado = document.getElementById("buscador").value.toLowerCase().trim();
 
+            // Filtramos el array global basándonos en el título o la descripción
+            const resultados = todosLosProductos.filter(prod => {
+                const titulo = prod.titulo.toLowerCase();
+                const descripcion = prod.descripcion.toLowerCase();
+                return titulo.includes(textoBuscado) || descripcion.includes(textoBuscado);
+            });
+
+            // Reseteamos visualmente los botones de categoría para que no queden "trabados" en activo
+            const botones = document.querySelectorAll('.filter-btn');
+            botones.forEach((btn, index) => {
+                if (index === 0) {
+                    btn.style.background = "var(--primary)";
+                    btn.style.color = "var(--bg-dark)";
+                } else {
+                    btn.style.background = "var(--bg-card)";
+                    btn.style.color = "var(--text-main)";
+                    btn.style.borderColor = "#334155";
+                }
+            });
 
         // Función que filtra los productos al hacer clic en los botones
 
@@ -790,29 +812,7 @@
 
         }
 
-    // Función de búsqueda en tiempo real
-        function filtrarPorBusqueda() {
-            const textoBuscado = document.getElementById("buscador").value.toLowerCase().trim();
-
-            // Filtramos el array global basándonos en el título o la descripción
-            const resultados = todosLosProductos.filter(prod => {
-                const titulo = prod.titulo.toLowerCase();
-                const descripcion = prod.descripcion.toLowerCase();
-                return titulo.includes(textoBuscado) || descripcion.includes(textoBuscado);
-            });
-
-            // Reseteamos visualmente los botones de categoría para que no queden "trabados" en activo
-            const botones = document.querySelectorAll('.filter-btn');
-            botones.forEach((btn, index) => {
-                if (index === 0) {
-                    btn.style.background = "var(--primary)";
-                    btn.style.color = "var(--bg-dark)";
-                } else {
-                    btn.style.background = "var(--bg-card)";
-                    btn.style.color = "var(--text-main)";
-                    btn.style.borderColor = "#334155";
-                }
-            });
+   
 
             // Mostramos los productos que coincidan con la búsqueda
             mostrarProductos(resultados);
