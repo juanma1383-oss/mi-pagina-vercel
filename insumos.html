@@ -358,15 +358,17 @@
                         <span class="product-tag">${prod.categoria}</span>
                         <h3>${prod.titulo}</h3>
                         <p>${prod.descripcion}</p>
-                        <!-- AGREGAMOS ESTE BLOQUE PARA EL PRECIO -->
-                        <div class="card-footer" style="border-top: none; padding-top: 0; margin-bottom: 0.8rem;">
-                            <span class="product-price">$ ${prod.precio}</span>
-                        </div>
-                            <!-- Pie de tarjeta con precio y botón alineados y centrados -->
+                        
+                        <!-- Pie de tarjeta con precio y botón alineados y centrados -->
                         <div class="card-footer" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
                             <span class="product-price" style="font-size: 1.25rem; font-weight: bold; color: var(--primary); white-space: nowrap;">$ ${prod.precio}</span>
                             <a href="https://wa.me/5491135695978?text=${prod.mensajeWpp}" class="btn-consultar" target="_blank" style="flex-grow: 1; margin: 0;">
                                 <i class="fab fa-whatsapp"></i> Consultar stock
+                            </a>
+                        </div>
+                    </div>
+                `;
+                            
 
 
                         
